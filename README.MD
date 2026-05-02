@@ -3,13 +3,15 @@
 **Instituição:** FIAP - Faculdade de Informática e Administração Paulista
 **Curso:** Tecnologia em Análise e Desenvolvimento de Sistemas (TDS)
 **Professor:** Dr. Marcel Stefan Wagner
-**Repositório GitHub:** [INSERIR LINK AQUI]
+**Repositório GitHub:** https://github.com/Dejota-04/cp5-net
 **Link do Vídeo (YouTube):** [INSERIR LINK AQUI]
 
 ## 👥 Integrantes do Grupo
-* Daniel Santana Correa Batista - RM: [559622]
-* [Nome do Integrante 2] - RM: [RM]
-* [Nome do Integrante 3] - RM: [RM]
+* Daniel Santana Corrêa Batista [RM559622]
+
+* Wendell Nascimento Dourado [RA559336]
+
+* Jonas de Jesus Campos de Oliveira [RM561144]
 
 ---
 
