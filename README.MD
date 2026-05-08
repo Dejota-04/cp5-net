@@ -4,7 +4,7 @@
 **Curso:** Tecnologia em Análise e Desenvolvimento de Sistemas (TDS)
 **Professor:** Dr. Marcel Stefan Wagner
 **Repositório GitHub:** https://github.com/Dejota-04/cp5-net
-**Link do Vídeo (YouTube):** [INSERIR LINK AQUI]
+**Link do Vídeo (YouTube):** https://youtu.be/z_JZ0tL0MqM
 
 ## 👥 Integrantes do Grupo
 * Daniel Santana Corrêa Batista [RM559622]
