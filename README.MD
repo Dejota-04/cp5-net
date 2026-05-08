@@ -8,9 +8,7 @@
 
 ## 👥 Integrantes do Grupo
 * Daniel Santana Corrêa Batista [RM559622]
-
 * Wendell Nascimento Dourado [RA559336]
-
 * Jonas de Jesus Campos de Oliveira [RM561144]
 
 ---
@@ -55,24 +53,45 @@ O projeto `Validation.Service` atua como o nó central de orquestração (consum
 
 ---
 
-## 🚀 Exemplo de Execução
+## 🚀 Instruções e Exemplo de Execução
 
-**Ordem de Inicialização (5 terminais):**
-1. `dotnet run --project Validation.Service` (Responsável por declarar as Exchanges e Queues no broker).
-2. `dotnet run --project Receiver1.Frutas`
-3. `dotnet run --project Receiver2.Usuarios`
-4. `dotnet run --project Sender1.Frutas`
-5. `dotnet run --project Sender2.Usuarios`
+**Passo 1: Subir a Infraestrutura (RabbitMQ)**
+Antes de iniciar as aplicações, é necessário subir o container do RabbitMQ via Docker. No terminal, execute:
+```bash
+docker run -d --hostname rabbit-local --name rabbitmq-fiap -p 5672:5672 -p 15672:15672 rabbitmq:3-management
+
+```
+
+_(Nota: A interface de gerenciamento estará disponível em `http://localhost:15672` com as credenciais padrão `guest` / `guest`)._
+
+**Passo 2: Iniciar os Microsserviços** Abra 5 terminais separados na raiz da Solution e execute na seguinte ordem:
+
+1.  `dotnet run --project Validation.Service` (Responsável por declarar as Exchanges e Queues no broker).
+
+2.  `dotnet run --project Receiver1.Frutas`
+
+3.  `dotnet run --project Receiver2.Usuarios`
+
+4.  `dotnet run --project Sender1.Frutas`
+
+5.  `dotnet run --project Sender2.Usuarios`
+
 
 **Exemplo de log - Fluxo de Usuários:**
-* **Sender 2:** `[x] Enviado Registro de: João da Silva às 01/05/2026 20:36:48`
-* **Validation:** `[Usuários] Validando dados de: João da Silva...`
-* **Receiver 2:**
-  ```text
-  [Novo Usuário Recebido]
-  - Nome: João da Silva
-  - Endereço: Rua das Laranjeiras, 123
-  - RG: 123456789
-  - CPF: 11122233344
-  - Data/Hora Registro: 01/05/2026 20:36:48
-  - Status de Validação: VALIDADO
+
+-   **Sender 2:** `[x] Enviado Registro de: João da Silva às 01/05/2026 20:36:48`
+
+-   **Validation:** `[Usuários] Validando dados de: João da Silva...`
+
+-   **Receiver 2:**
+
+    Plaintext
+
+    ```
+    [Novo Usuário Recebido]
+    - Nome: João da Silva
+    - Endereço: Rua das Laranjeiras, 123
+    - RG: 123456789
+    - CPF: 11122233344
+    - Data/Hora Registro: 01/05/2026 20:36:48
+    - Status de Validação: VALIDADO
